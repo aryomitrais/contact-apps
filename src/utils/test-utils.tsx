@@ -1,6 +1,5 @@
-import { AppStore, RootState, makeStore } from '@/app/redux/store/store';
-import { RenderOptions, renderHook } from '@testing-library/react';
-import { render } from '@testing-library/react';
+import { AppStore, RootState, makeStore } from '@/redux/store/store';
+import { RenderOptions, renderHook, render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { PropsWithChildren, ReactElement } from 'react';
 import { Provider } from 'react-redux';

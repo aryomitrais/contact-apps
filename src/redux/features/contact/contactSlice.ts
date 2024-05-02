@@ -1,5 +1,5 @@
 import { http } from '@/utils/http';
-import { createAppSlice } from '../../createAppSlice';
+import { createAppSlice } from '@/redux/createAppSlice';
 import { createAsyncThunk, isAnyOf } from '@reduxjs/toolkit';
 
 export interface Contact {

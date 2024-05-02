@@ -2,9 +2,9 @@ import { screen } from '@testing-library/react';
 import { renderWithProviders } from '@/utils/test-utils';
 import App from './App';
 import { Mock, vi } from 'vitest';
-import { useGetAllContact } from './app/hooks';
+import { useGetAllContact } from './hooks';
 
-vi.mock('./app/hooks/contactHooks.ts');
+vi.mock('./hooks/contactHooks.ts');
 
 describe('App', () => {
   it('Renders the App component', () => {

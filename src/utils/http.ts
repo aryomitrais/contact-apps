@@ -26,12 +26,20 @@ class Http {
     method: HTTPMethodEnum,
     url: string,
     data?: object
-  ): Promise<RequestReturn<ResponseBody>> {
+  ): Promise<RequestReturn<ResponseBody | object>> {
     try {
       const response = await fetch(url, {
         method,
         body: data ? JSON.stringify(data) : undefined,
       });
+      if (method !== HTTPMethodEnum.GET) {
+        return {
+          status: response.status,
+          ok: response.ok,
+          responseBody: { data: [] },
+        };
+      }
+
       const responseBody = await response.json();
       const { status, ok } = response;
       return { status, ok, responseBody };

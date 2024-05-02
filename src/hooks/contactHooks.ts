@@ -1,12 +1,12 @@
 import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../redux/store/store';
+import { AppDispatch, RootState } from '@/redux/store/store';
 import {
   Contact,
   createContactAsyncThunk,
   deleteContactAsyncThunk,
   fetchContact,
   updateContactAsyncThunk,
-} from '../redux/features/contact/contactSlice';
+} from '@/redux/features/contact/contactSlice';
 
 export type UseGetAllContactType = ReturnType<typeof useGetAllContact>;
 

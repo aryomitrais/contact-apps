@@ -1,52 +1,12 @@
-// import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
 import './App.css';
-import { useGetAllContact } from './app/hooks';
-import { useEffect } from 'react';
+import { BaseLayout } from './pages/common/BaseLayout';
+import ContactListPage from './pages/contactList/ContactListPage';
 
 function App() {
-  const {
-    data: contactData,
-    isLoading: contactIsFetching,
-    getContact,
-  } = useGetAllContact();
-
-  useEffect(() => {
-    (async () => {
-      await getContact();
-    })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <br />
-        <strong>fetching: {contactIsFetching ? 'LOADING' : 'IDLE'}</strong>
-        <br />
-        <ul>
-          {contactData.map((contact) => (
-            <li>{contact.firstName}</li>
-          ))}
-        </ul>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <BaseLayout>
+      <ContactListPage />
+    </BaseLayout>
   );
 }
 
