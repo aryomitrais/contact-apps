@@ -148,7 +148,7 @@ const ContactForm = ({
                     <FormItem className="flex-1">
                       <FormLabel>Photo URL</FormLabel>
                       <FormControl role="product-name-input">
-                        <Input placeholder="Enter product name" {...field} />
+                        <Input placeholder="Enter photo URL" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -163,7 +163,7 @@ const ContactForm = ({
                     <FormItem className="flex-1">
                       <FormLabel>First Name</FormLabel>
                       <FormControl role="product-name-input">
-                        <Input placeholder="Enter product name" {...field} />
+                        <Input placeholder="Enter First Name" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -178,7 +178,7 @@ const ContactForm = ({
                     <FormItem className="flex-1">
                       <FormLabel>Last Name</FormLabel>
                       <FormControl role="product-name-input">
-                        <Input placeholder="Enter product name" {...field} />
+                        <Input placeholder="Enter Last name" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -194,7 +194,7 @@ const ContactForm = ({
                       <FormLabel>Age</FormLabel>
                       <FormControl role="product-name-input">
                         <Input
-                          placeholder="Enter product name"
+                          placeholder="Enter Age"
                           {...field}
                           onChange={(e) => {
                             const val = parseInt(e.target.value);
