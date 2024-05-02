@@ -26,7 +26,7 @@ class Http {
     method: HTTPMethodEnum,
     url: string,
     data?: object
-  ): Promise<RequestReturn<ResponseBody | object>> {
+  ): Promise<RequestReturn<ResponseBody | []>> {
     try {
       const response = await fetch(url, {
         method,
