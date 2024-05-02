@@ -1,7 +1,7 @@
 import ContactForm from '@/components/contact/ContactForm';
 import { Toaster } from '@/components/ui/toaster';
 import { useGetAllContact } from '@/hooks/contactHooks';
-import { CirclePlus, UserRoundPlus } from 'lucide-react';
+import { CirclePlus } from 'lucide-react';
 import { useState } from 'react';
 
 export const BaseLayout = ({
