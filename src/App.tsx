@@ -1,10 +1,23 @@
-import { useState } from 'react';
+// import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
+import { useGetAllContact } from './app/hooks';
+import { useEffect } from 'react';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const {
+    data: contactData,
+    isLoading: contactIsFetching,
+    getContact,
+  } = useGetAllContact();
+
+  useEffect(() => {
+    (async () => {
+      await getContact();
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
@@ -18,9 +31,14 @@ function App() {
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
+        <br />
+        <strong>fetching: {contactIsFetching ? 'LOADING' : 'IDLE'}</strong>
+        <br />
+        <ul>
+          {contactData.map((contact) => (
+            <li>{contact.firstName}</li>
+          ))}
+        </ul>
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
