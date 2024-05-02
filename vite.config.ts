@@ -14,6 +14,7 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./vitestSetup.ts'],
+    mockReset: true,
     coverage: {
       provider: 'v8',
       reporter: ['lcov', 'html', 'json'],
