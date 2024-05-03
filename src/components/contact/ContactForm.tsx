@@ -86,13 +86,15 @@ const ContactForm = ({
       : contactForm;
     if (contactRequestPayload.id) {
       await updateContact(contactRequestPayload);
+      toast({
+        description: 'Contact has been updated.',
+      });
     } else {
       await createContact(contactRequestPayload);
+      toast({
+        description: 'New Contact has been added.',
+      });
     }
-
-    toast({
-      description: 'Contact has been updated.',
-    });
     onClose(true);
   };
 
