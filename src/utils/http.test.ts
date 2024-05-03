@@ -36,7 +36,7 @@ describe('http utility', () => {
       ).resolves.toEqual({
         status: 200,
         ok: true,
-        responseBody: { dummyResponse: 'dummyResponse' },
+        responseBody: { data: [] },
       });
       expect(fetch).toHaveBeenCalledWith('dummyUrl', {
         method: HTTPMethodEnum.POST,
@@ -49,7 +49,7 @@ describe('http utility', () => {
       ).resolves.toEqual({
         status: 200,
         ok: true,
-        responseBody: { dummyResponse: 'dummyResponse' },
+        responseBody: { data: [] },
       });
       expect(fetch).toHaveBeenCalledWith('dummyUrl', {
         method: HTTPMethodEnum.PUT,
@@ -62,7 +62,7 @@ describe('http utility', () => {
       ).resolves.toEqual({
         status: 200,
         ok: true,
-        responseBody: { dummyResponse: 'dummyResponse' },
+        responseBody: { data: [] },
       });
       expect(fetch).toHaveBeenCalledWith('dummyUrl', {
         method: HTTPMethodEnum.DELETE,

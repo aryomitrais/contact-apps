@@ -19,17 +19,22 @@ const SkeletonList = ({
   isVisible: boolean;
   repeat: number;
 }) => {
-  return isVisible
-    ? [...Array(repeat)].map(() => (
-        <div className="flex items-center space-x-4 mb-7">
+  return isVisible ? (
+    <div data-testid="contact-list-skeleton-loading">
+      {[...Array(repeat)].map((_value, index) => (
+        <div
+          key={`${index}-skeleton-item`}
+          className="flex items-center space-x-4 mb-7"
+        >
           <Skeleton className="h-12 w-12 rounded-full" />
           <div className="space-y-2">
             <Skeleton className="h-4 w-[250px]" />
             <Skeleton className="h-4 w-[200px]" />
           </div>
         </div>
-      ))
-    : null;
+      ))}
+    </div>
+  ) : null;
 };
 
 export { Skeleton, SkeletonList };

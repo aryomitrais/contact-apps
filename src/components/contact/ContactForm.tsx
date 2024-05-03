@@ -38,11 +38,11 @@ const contactFormSchema = z.object({
 
 const ContactForm = ({
   isOpen,
-  onClose,
+  onClose = () => {},
   contact,
 }: {
   isOpen: boolean;
-  onClose: (reloadData?: boolean) => void;
+  onClose?: (reloadData?: boolean) => void;
   contact?: Contact;
 }) => {
   const { toast } = useToast();
